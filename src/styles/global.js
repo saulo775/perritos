@@ -9,9 +9,7 @@ export const GlobalStyle = createGlobalStyle`
         --green: #33CC95;
         --black: #000000;
 
-        --background: #0E0E0E;
-        --text-color: #FFFFFF;
-        --black-overlay: #00000080;
+        --dark-grey: #333333;
 
 
         --font-first: Helvetica, Arial, sans-serif;
@@ -66,5 +64,11 @@ export const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
         color: currentColor;
+    }
+
+    .container {
+        max-width: 50rem;
+        padding: 0 1rem;
+        margin: 0 auto;
     }
 `;
