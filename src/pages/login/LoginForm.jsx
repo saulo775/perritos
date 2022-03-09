@@ -1,6 +1,8 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
+
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
 
 export function LoginForm(){
     const [username, setUsername] = React.useState('');
@@ -26,18 +28,10 @@ export function LoginForm(){
     }
     return(
         <section>
-            <form action="" onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    value={username}
-                    onChange={(event)=>setUsername(event.target.value)}
-                /> 
-                <input 
-                    type="text" 
-                    value={password}
-                    onChange={(event)=>setPassword(event.target.value)}
-                /> 
-                <button type="submit">enviar</button>
+            <form action="" onSubmit={handleSubmit}>   
+                <Input label="Usuário" type="text" name="username"/>
+                <Input label="Senha" type="password" name="password"/>
+                <Button>Enviar</Button>
             </form>
             <Link to="/login/create">Cadastro</Link>
         </section>

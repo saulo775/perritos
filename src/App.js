@@ -11,6 +11,8 @@ function App() {
   return (
     <>
       <GlobalStyle/>
+
+      
       <BrowserRouter>
         <Header/>
         <Routes>
