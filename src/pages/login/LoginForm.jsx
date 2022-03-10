@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import { useForm } from "../../hooks/useForm";
+
 
 export function LoginForm(){
-    const [username, setUsername] = React.useState('');
-    const [password, setPassword] = React.useState('');
+    const username = useForm('email');
+    const password = useForm();
+    console.log(username.error)
 
     function handleSubmit(event) {
         //Cancela a ação padrão
@@ -26,11 +29,12 @@ export function LoginForm(){
             console.log(json);
         })
     }
+
     return(
         <section>
             <form action="" onSubmit={handleSubmit}>   
-                <Input label="Usuário" type="text" name="username"/>
-                <Input label="Senha" type="password" name="password"/>
+                <Input label="Usuário" type="text" name="username" {...username}/>
+                <Input label="Senha" type="password" name="password" {...password}/>
                 <Button>Enviar</Button>
             </form>
             <Link to="/login/create">Cadastro</Link>
